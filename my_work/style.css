@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Meiryo";
+  height: 100%;
+}
+
+/* 共通 */
+img {
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a, li, dt, dd, label {
+  font-size: 16px;
+}
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto 128px;
+  padding: 0 4%;
+}
+
+.sec-title {
+  font-size: 24px;
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+/* 独立 */
+
+/* header */
+#header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 270px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+h1 {
+  width: 120px;
+  height: 36px;
+}
+
+#header-inner ul {
+  display: flex;
+  gap: 32px;
+}
+
+#header-inner a {
+  text-decoration: none;
+  color: black;
+}
+
+#header-inner li:nth-child(5) {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* メイン画像 */
+#mainvisual {
+  margin-bottom: 80px;
+}
+
+#mainvisual img {
+  height: 420px;
+  object-fit: cover;
+}
+/* object-fit: cover; 指定したサイズ枠内に収めつつ、アスペクト比を維持するため */
+
+
+/* section1 */
+#about ul {
+  margin-bottom: 32px;
+}
+
+#about li:nth-child(1) {
+  margin-bottom:  32px;
+}
+
+
+/* section2 */
+#works ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+#works img {
+  object-fit: cover;
+}
+
+
+/* section3 */
+#news dl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#news dt{
+  width: 20%;
+}
+
+#news dd {
+  width: 80%;
+}
+
+#news dt, #news dd {
+  padding: 16px;
+  border-top: 1px solid rgba(128, 128, 128, 0.5);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+
+/* section4 */
+form {
+  height:auto;
+}
+
+#contact dl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#contact dt {
+  width: 15%;
+}
+
+#contact dd {
+  width: 85%;
+  margin-bottom: 16px;
+}
+
+#name, #email, #message {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+/* margin-bottomは、#contact ddか #name, #email, #messageか 違い
+   ⇒両方に指定したらレイアウトに統一感でる
+*/
+
+#message {
+  height: 128px;
+}
+
+.button input {
+  display: flex;
+  margin: 0 auto;
+  width: 200px;
+  padding: 16px 0;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+}
+
+.button input:hover{
+  background-color: white;
+  color: black;
+}
+
+
+/* footer */
+#footer {
+  background-color: black;
+  height: 32px;
+}
+
+#footer p {
+  color: white;
+  font-size: 8px;
+  text-align: center;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+
+@media (max-width: 600px) {
+
+  .inner {
+    margin-bottom: 64px;
+  }
+
+  .sec-title {
+    margin-bottom: 48px;
+  }
+
+  #header-inner {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+
+  #header-inner ul {
+    gap: 16px;
+  }
+  
+  #works ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #news dt, #news dd { 
+    border-top: none;
+    border-bottom: none;
+  }
+
+  #news dt {
+    padding: 16px 16px 0;
+    width: 100%;
+    border-top: 1px solid rgba(128, 128, 128, 0.5);
+  }
+  
+  #news dd {
+    padding: 0 16px 16px;
+    width: 100%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+  }
+
+  #contact dl {
+    display: inline-block;
+  }
+
+  #contact dt, #contact dd {
+    width: 100%;
+  }
+
+  #message {
+    height: 160px;
+  }  
+}
